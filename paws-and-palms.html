@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paws & Palms — Luxury Pet Care, Lahore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream: #FDFBF7;
+      --cream-dark: #F5F0E8;
+      --cream-border: #EDE7D9;
+      --espresso: #3E2723;
+      --espresso-mid: #5D3A1A;
+      --espresso-light: #8B6355;
+      --terracotta: #D35400;
+      --terracotta-light: #E8651A;
+      --sage: #6B8C74;
+      --sage-light: #EBF2EC;
+      --gold: #C9992A;
+      --white: #FFFFFF;
+      --text-muted: #9E8B7D;
+      --shadow-sm: 0 1px 3px rgba(62, 39, 35, 0.06), 0 1px 2px rgba(62, 39, 35, 0.04);
+      --shadow-md: 0 4px 16px rgba(62, 39, 35, 0.08), 0 2px 6px rgba(62, 39, 35, 0.04);
+      --shadow-lg: 0 12px 40px rgba(62, 39, 35, 0.12), 0 4px 12px rgba(62, 39, 35, 0.06);
+      --shadow-xl: 0 24px 64px rgba(62, 39, 35, 0.14), 0 8px 24px rgba(62, 39, 35, 0.08);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--espresso);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce-bar {
+      background: var(--espresso);
+      color: rgba(253, 251, 247, 0.85);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 3px 10px 3px 7px;
+      font-size: 12px;
+      color: rgba(253, 251, 247, 0.9);
+    }
+
+    .live-dot::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+      animation: pulse-green 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-green {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 5px rgba(74, 222, 128, 0);
+      }
+    }
+
+    /* ── NAVIGATION ── */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 251, 247, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--cream-border);
+      transition: box-shadow 0.3s;
+    }
+
+    .nav-wrap.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--espresso);
+      text-decoration: none;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .logo span {
+      color: var(--terracotta);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--espresso-light);
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--espresso);
+      background: var(--cream-dark);
+    }
+
+    .btn-primary {
+      background: var(--espresso);
+      color: var(--cream);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary:hover {
+      background: var(--espresso-mid);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .nav-hamburger {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--espresso);
+      border-radius: 2px;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sage-light);
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 4.5vw, 56px);
+      line-height: 1.1;
+      color: var(--espresso);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--espresso-light);
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+
+    .trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      border: 1px solid var(--cream-border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--espresso);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ── PRICE SUMMARY BOX ── */
+    .price-summary {
+      background: var(--white);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .price-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .price-total {
+      font-family: 'DM Serif Display', serif;
+      font-size: 38px;
+      color: var(--espresso);
+      line-height: 1;
+    }
+
+    .price-total span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .price-badge {
+      background: var(--sage-light);
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* ── PROFILE CARD ── */
+    .profile-card {
+      background: var(--white);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--espresso);
+      margin-bottom: 6px;
+    }
+
+    .card-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .field-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .seg-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .seg-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 8px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--cream-border);
+      background: var(--cream);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--espresso-light);
+      transition: all 0.18s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-align: center;
+    }
+
+    .seg-btn:hover {
+      border-color: var(--espresso-light);
+      color: var(--espresso);
+      background: var(--cream-dark);
+    }
+
+    .seg-btn.active {
+      border-color: var(--espresso);
+      background: var(--espresso);
+      color: var(--cream);
+      box-shadow: var(--shadow-md);
+    }
+
+    .seg-btn .emoji {
+      font-size: 18px;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .pill-btn {
+      padding: 9px 16px;
+      border-radius: 50px;
+      border: 2px solid var(--cream-border);
+      background: var(--cream);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--espresso-light);
+      transition: all 0.18s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      white-space: nowrap;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+
+    .pill-btn.active {
+      border-color: var(--terracotta);
+      background: var(--terracotta);
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(211, 84, 0, 0.25);
+    }
+
+    /* ── CUSTOM INPUT INLINE ── */
+    .custom-input-row {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      animation: fadeSlideIn 0.25s ease;
+    }
+
+    .custom-input-row.visible {
+      display: flex;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .custom-input-row input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--cream-border);
+      background: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--espresso);
+      outline: none;
+      transition: border-color 0.18s;
+    }
+
+    .custom-input-row input:focus {
+      border-color: var(--espresso-light);
+    }
+
+    .custom-input-row .input-prefix {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .custom-input-row .btn-apply {
+      background: var(--espresso);
+      color: var(--cream);
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: background 0.18s;
+      white-space: nowrap;
+    }
+
+    .custom-input-row .btn-apply:hover {
+      background: var(--espresso-mid);
+    }
+
+    .base-price-indicator {
+      background: linear-gradient(135deg, var(--cream-dark), var(--cream));
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .base-price-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .base-price-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: var(--espresso);
+    }
+
+    .base-price-value.changed {
+      animation: pricePop 0.35s ease;
+    }
+
+    @keyframes pricePop {
+      0% {
+        transform: scale(1);
+      }
+
+      40% {
+        transform: scale(1.12);
+        color: var(--terracotta);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .base-price-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--cream-border);
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      line-height: 1.15;
+      color: var(--espresso);
+      margin-bottom: 14px;
+      letter-spacing: -0.015em;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--espresso-light);
+      max-width: 520px;
+    }
+
+    /* ── UPSELL MATRIX ── */
+    .upsell-bg {
+      background: var(--cream-dark);
+      border-top: 1px solid var(--cream-border);
+      border-bottom: 1px solid var(--cream-border);
+    }
+
+    .upsell-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .addon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .addon-card {
+      background: var(--white);
+      border: 2px solid var(--cream-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      position: relative;
+      user-select: none;
+    }
+
+    .addon-card:hover {
+      border-color: #C9B99A;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .addon-card.checked {
+      border-color: var(--espresso);
+      background: #FDFAF5;
+      box-shadow: var(--shadow-md);
+    }
+
+    .addon-checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--cream-border);
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      background: var(--cream);
+    }
+
+    .addon-card.checked .addon-checkbox {
+      background: var(--espresso);
+      border-color: var(--espresso);
+    }
+
+    .addon-check-icon {
+      display: none;
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .addon-card.checked .addon-check-icon {
+      display: block;
+    }
+
+    .addon-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .addon-body {
+      flex: 1;
+    }
+
+    .addon-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--espresso);
+      margin-bottom: 4px;
+    }
+
+    .addon-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .addon-price {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--terracotta);
+      background: rgba(211, 84, 0, 0.07);
+      border-radius: 8px;
+      padding: 3px 10px;
+    }
+
+    .total-block {
+      background: var(--espresso);
+      color: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 28px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .total-text {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
+
+    .total-amount {
+      font-family: 'DM Serif Display', serif;
+      font-size: 44px;
+      line-height: 1;
+    }
+
+    .total-amount.pop {
+      animation: pricePop 0.4s ease;
+    }
+
+    .total-right {
+      text-align: right;
+    }
+
+    .total-note {
+      font-size: 12px;
+      opacity: 0.55;
+      margin-top: 6px;
+    }
+
+    /* ── SCHEDULING ── */
+    .schedule-header {
+      margin-bottom: 36px;
+    }
+
+    .date-scroll-wrap {
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 36px;
+      scrollbar-width: none;
+    }
+
+    .date-scroll-wrap::-webkit-scrollbar {
+      display: none;
+    }
+
+    .date-scroll {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+    }
+
+    .date-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--cream-border);
+      background: var(--white);
+      cursor: pointer;
+      transition: all 0.18s;
+      min-width: 72px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .date-pill:hover {
+      border-color: var(--espresso-light);
+      transform: translateY(-2px);
+    }
+
+    .date-pill.active {
+      border-color: var(--espresso);
+      background: var(--espresso);
+    }
+
+    .date-day {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .date-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--espresso);
+      margin-top: 2px;
+    }
+
+    .date-pill.active .date-day {
+      color: rgba(253, 251, 247, 0.6);
+    }
+
+    .date-pill.active .date-num {
+      color: var(--cream);
+    }
+
+    .date-pill.today .date-num::after {
+      content: '·';
+      color: var(--terracotta);
+      font-size: 28px;
+      line-height: 0;
+      vertical-align: -4px;
+    }
+
+    .time-section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .time-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--cream-border);
+    }
+
+    .time-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .time-slot {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--cream-border);
+      background: var(--white);
+      cursor: pointer;
+      transition: all 0.18s;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--espresso);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .time-slot:hover {
+      border-color: var(--espresso-light);
+      transform: translateY(-2px);
+    }
+
+    .time-slot.active {
+      border-color: var(--espresso);
+      background: var(--espresso);
+      color: var(--cream);
+    }
+
+    .time-slot.quiet .quiet-tag {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--sage);
+      background: var(--sage-light);
+      border-radius: 20px;
+      padding: 2px 7px;
+      white-space: nowrap;
+    }
+
+    .time-slot.active.quiet .quiet-tag {
+      background: rgba(107, 140, 116, 0.25);
+      color: #a8d4b0;
+    }
+
+    .confirm-row {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-confirm {
+      background: var(--terracotta);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 44px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      box-shadow: 0 8px 24px rgba(211, 84, 0, 0.3);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-confirm:hover {
+      background: var(--terracotta-light);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(211, 84, 0, 0.35);
+    }
+
+    .btn-confirm:active {
+      transform: translateY(-1px);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 28px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .review-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .review-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--espresso);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--espresso);
+      border: 2px solid var(--cream-border);
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--espresso);
+    }
+
+    .author-location {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: rgba(253, 251, 247, 0.7);
+      padding: 60px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .footer-logo span {
+      color: var(--terracotta);
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(253, 251, 247, 0.4);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: rgba(253, 251, 247, 0.7);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--cream);
+    }
+
+    .clinic-widget {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .clinic-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      color: rgba(253, 251, 247, 0.8);
+    }
+
+    .clinic-detail:last-child {
+      margin-bottom: 0;
+    }
+
+    .clinic-detail .icon {
+      flex-shrink: 0;
+      font-size: 15px;
+      margin-top: 1px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(253, 251, 247, 0.35);
+    }
+
+    /* ── SUCCESS MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 15, 8, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modal-overlay.show .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .checkmark-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4f7dc, #a8edb6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      color: var(--espresso);
+      margin-bottom: 10px;
+    }
+
+    .modal-sub {
+      font-size: 15px;
+      color: var(--espresso-light);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .modal-details {
+      background: var(--cream);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      text-align: left;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .modal-row-label {
+      color: var(--text-muted);
+    }
+
+    .modal-row-val {
+      font-weight: 600;
+      color: var(--espresso);
+    }
+
+    .modal-close {
+      width: 100%;
+      background: var(--espresso);
+      color: var(--cream);
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--espresso-mid);
+    }
+
+    .confetti-row {
+      font-size: 24px;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+      animation: wiggle 1s ease 0.3s both;
+    }
+
+    @keyframes wiggle {
+
+      0%,
+      100% {
+        transform: rotate(0);
+      }
+
+      25% {
+        transform: rotate(-5deg);
+      }
+
+      75% {
+        transform: rotate(5deg);
+      }
+    }
+
+    /* ── MOBILE NAV ── */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--cream-border);
+      padding: 16px 24px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--cream-border);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--espresso);
+      text-decoration: none;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 48px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-inner>*:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: block;
+      }
+
+      .hero {
+        padding: 36px 20px 48px;
+      }
+
+      .section {
+        padding: 56px 20px;
+      }
+
+      .profile-card {
+        padding: 24px 20px;
+      }
+
+      .total-block {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .total-right {
+        text-align: center;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-confirm {
+        width: 100%;
+        text-align: center;
+      }
+
+      .price-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .modal-card {
+        padding: 36px 24px;
+      }
+
+      .hero-sub {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── ANNOUNCEMENT BAR ── -->
+  <div class="announce-bar">
+    <span>🐕 Premium Doorstep & In-Clinic Pet Spa — Serving Lahore's Finest Pets</span>
+    <span class="live-dot">Groomers & Vets Available Today</span>
+  </div>
+
+  <!-- ── NAVIGATION ── -->
+  <div class="nav-wrap" id="navbar">
+    <nav>
+      <a href="#" class="logo">Paws & <span>Palms</span></a>
+      <ul class="nav-links">
+        <li><a href="#grooming">Grooming</a></li>
+        <li><a href="#vetcare">Vet Care</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <a href="#schedule" class="btn-primary">Book Appointment →</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#grooming">Grooming</a>
+      <a href="#vetcare">Vet Care</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#schedule" style="color:var(--terracotta);font-weight:700;">Book Appointment →</a>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section id="grooming">
+    <div class="hero">
+      <!-- Left: Copy + Price Summary -->
+      <div>
+        <div class="hero-eyebrow">✦ Lahore's Boutique Pet Salon</div>
+        <h1>Stress-Free Grooming &amp; Vet Care. <em>No Crowded Waiting Rooms.</em></h1>
+        <p class="hero-sub">Skip the chaotic, noisy waiting areas. Our certified groomers and compassionate vets offer
+          dedicated, one-on-one attention to keep your pet calm, happy, and smelling incredible.</p>
+        <div class="trust-pills">
+          <span class="trust-pill">🏅 Certified Groomers</span>
+          <span class="trust-pill">🚗 Doorstep Service</span>
+          <span class="trust-pill">🩺 In-House Vets</span>
+          <span class="trust-pill">⏱ Same-Day Slots</span>
+        </div>
+        <div class="price-summary">
+          <div>
+            <div class="price-label">Estimated Starting Price</div>
+            <div class="price-total"><span>Rs. </span><span id="hero-total">3,500</span></div>
+          </div>
+          <div class="price-badge">Incl. Full Grooming</div>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Profile Card -->
+      <div class="profile-card" id="vetcare">
+        <div class="card-title">Tell us about your companion</div>
+        <div class="card-subtitle">We'll personalise your session and calculate an instant estimate.</div>
+
+        <div class="field-label">Pet Type</div>
+        <div class="seg-group" id="pet-seg-group">
+          <button class="seg-btn active" data-pet="dog" onclick="selectPet('dog', this)">
+            <span class="emoji">🐕</span> Dog
+          </button>
+          <button class="seg-btn" data-pet="cat" onclick="selectPet('cat', this)">
+            <span class="emoji">🐈</span> Cat
+          </button>
+          <button class="seg-btn" data-pet="rabbit" onclick="selectPet('rabbit', this)">
+            <span class="emoji">🐇</span> Rabbit
+          </button>
+          <button class="seg-btn" data-pet="bird" onclick="selectPet('bird', this)">
+            <span class="emoji">🐦</span> Bird
+          </button>
+          <button class="seg-btn" data-pet="hamster" onclick="selectPet('hamster', this)">
+            <span class="emoji">🐹</span> Hamster
+          </button>
+          <button class="seg-btn" data-pet="fish" onclick="selectPet('fish', this)">
+            <span class="emoji">🐠</span> Fish
+          </button>
+          <button class="seg-btn" data-pet="turtle" onclick="selectPet('turtle', this)">
+            <span class="emoji">🐢</span> Turtle
+          </button>
+          <button class="seg-btn" data-pet="parrot" onclick="selectPet('parrot', this)">
+            <span class="emoji">🦜</span> Parrot
+          </button>
+          <button class="seg-btn" data-pet="guinea" onclick="selectPet('guinea', this)">
+            <span class="emoji">🐾</span> Guinea Pig
+          </button>
+          <button class="seg-btn" data-pet="other" onclick="selectPet('other', this)">
+            <span class="emoji">✏️</span> Other
+          </button>
+        </div>
+        <!-- Custom pet name input -->
+        <div class="custom-input-row" id="custom-pet-row">
+          <input type="text" id="custom-pet-input" placeholder="e.g. Iguana, Chinchilla…" maxlength="40"
+            oninput="applyCustomPet()" />
+        </div>
+
+        <div class="field-label">Weight</div>
+        <div class="pill-group" id="weight-pill-group">
+          <button class="pill-btn active" data-weight="500g" onclick="selectWeight('500g', this)">500g</button>
+          <button class="pill-btn" data-weight="1kg" onclick="selectWeight('1kg', this)">1 kg</button>
+          <button class="pill-btn" data-weight="1.5kg" onclick="selectWeight('1.5kg', this)">1.5 kg</button>
+          <button class="pill-btn" data-weight="2kg" onclick="selectWeight('2kg', this)">2 kg</button>
+          <button class="pill-btn" data-weight="2.5kg" onclick="selectWeight('2.5kg', this)">2.5 kg</button>
+          <button class="pill-btn" data-weight="3kg" onclick="selectWeight('3kg', this)">3 kg</button>
+          <button class="pill-btn" data-weight="3.5kg" onclick="selectWeight('3.5kg', this)">3.5 kg</button>
+          <button class="pill-btn" data-weight="4kg" onclick="selectWeight('4kg', this)">4 kg</button>
+          <button class="pill-btn" data-weight="4.5kg" onclick="selectWeight('4.5kg', this)">4.5 kg</button>
+          <button class="pill-btn" data-weight="5kg" onclick="selectWeight('5kg', this)">5 kg</button>
+          <button class="pill-btn" data-weight="other" onclick="selectWeight('other', this)">✏️ Other</button>
+        </div>
+        <!-- Custom weight input -->
+        <div class="custom-input-row" id="custom-weight-row">
+          <span class="input-prefix">Weight:</span>
+          <input type="number" id="custom-weight-input" placeholder="e.g. 7.5" min="0.1" max="200" step="0.1"
+            style="max-width:110px;" oninput="applyCustomWeight()" />
+          <span class="input-prefix">kg</span>
+        </div>
+
+        <div class="base-price-indicator">
+          <div>
+            <div class="base-price-label">Base grooming session</div>
+            <div class="base-price-value" id="base-price">Rs. 3,500</div>
+          </div>
+          <div style="font-size:28px">✂️</div>
+        </div>
+        <div class="base-price-note">Price updates as you select options below</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ── UPSELL MATRIX ── -->
+  <div class="upsell-bg" id="pricing">
+    <div class="section" style="padding-top:72px;padding-bottom:72px;">
+      <div class="upsell-header">
+        <div>
+          <div class="section-eyebrow">Personalise Your Visit</div>
+          <h2 class="section-heading">Elevate the Experience<br>with Premium Add-Ons</h2>
+          <p class="section-sub">Each treatment is administered by trained professionals using vet-approved products.
+            Select what your pet deserves.</p>
+        </div>
+      </div>
+
+      <div class="addon-grid">
+        <div class="addon-card" onclick="toggleAddon(this, 1500)" data-price="1500">
+          <div class="addon-checkbox"><span class="addon-check-icon">✓</span></div>
+          <div class="addon-icon">🦷</div>
+          <div class="addon-body">
+            <div class="addon-name">Deep-Clean Teeth Brushing</div>
+            <div class="addon-desc">Prevents plaque buildup and freshens breath instantly. Our certified team uses
+              pet-safe enzymatic gel for a thorough, stress-free clean.</div>
+            <span class="addon-price">+ Rs. 1,500</span>
+          </div>
+        </div>
+        <div class="addon-card" onclick="toggleAddon(this, 1000)" data-price="1000">
+          <div class="addon-checkbox"><span class="addon-check-icon">✓</span></div>
+          <div class="addon-icon">🛁</div>
+          <div class="addon-body">
+            <div class="addon-name">Oats &amp; Aloe Soothing Shampoo</div>
+            <div class="addon-desc">Perfect for sensitive skin, shedding reduction, and a noticeably silkier coat.
+              Imported formula, free of sulfates and artificial fragrances.</div>
+            <span class="addon-price">+ Rs. 1,000</span>
+          </div>
+        </div>
+        <div class="addon-card" onclick="toggleAddon(this, 2000)" data-price="2000">
+          <div class="addon-checkbox"><span class="addon-check-icon">✓</span></div>
+          <div class="addon-icon">🛡️</div>
+          <div class="addon-body">
+            <div class="addon-name">Flea, Tick &amp; Parasite Preventative</div>
+            <div class="addon-desc">Full medical-grade seasonal protection applied by our in-house vet team. Highly
+              effective against fleas, ticks, and mites — especially vital in Lahore summers.</div>
+            <span class="addon-price">+ Rs. 2,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="total-block">
+        <div>
+          <div class="total-text">Your personalised session total</div>
+          <div class="total-amount" id="grand-total">Rs. 3,500</div>
+        </div>
+        <div class="total-right">
+          <div style="font-size:13px;opacity:0.6;margin-bottom:6px;">Session breakdown</div>
+          <div style="font-size:14px;opacity:0.9;" id="total-breakdown">1 Grooming Session</div>
+          <div class="total-note">Final price confirmed at booking. No hidden fees.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCHEDULING ── -->
+  <section class="section" id="schedule">
+    <div class="schedule-header">
+      <div class="section-eyebrow">Reserve Your Spot</div>
+      <h2 class="section-heading">Choose a Time That Works for You</h2>
+      <p class="section-sub">We keep slots intentionally limited so your pet always receives full, undivided attention.
+        Book early to secure your preferred time.</p>
+    </div>
+
+    <div class="date-scroll-wrap">
+      <div class="date-scroll" id="date-scroll">
+        <!-- Dates injected by JS -->
+      </div>
+    </div>
+
+    <div class="time-section-label">Morning</div>
+    <div class="time-grid" id="morning-slots">
+      <!-- Injected by JS -->
+    </div>
+
+    <div class="time-section-label">Afternoon</div>
+    <div class="time-grid" id="afternoon-slots">
+      <!-- Injected by JS -->
+    </div>
+
+    <div class="confirm-row">
+      <button class="btn-confirm" onclick="confirmBooking()">Instantly Confirm Appointment →</button>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section" id="reviews">
+    <div class="section-eyebrow">Trusted by Lahore's Pet Parents</div>
+    <h2 class="section-heading">What Our Clients Are Saying</h2>
+    <p class="section-sub">Real reviews from families across Lahore's finest neighbourhoods — because your pet's
+      happiness is our most honest measure of success.</p>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"My golden retriever gets terrified of regular pet shops. Paws & Palms was a total game
+          changer. They treated him like absolute royalty, and the oats shampoo left his coat incredibly shiny. I
+          genuinely could not believe the difference."</p>
+        <div class="review-author">
+          <div class="avatar">AK</div>
+          <div>
+            <div class="author-name">Ayesha K.</div>
+            <div class="author-location">📍 DHA Phase 6, Lahore</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Extremely professional setup. I booked an emergency vet checkup online, completely
+          skipped the usual waiting room chaos, and was out in under 20 minutes. This is what modern pet care should
+          look like."</p>
+        <div class="review-author">
+          <div class="avatar">HM</div>
+          <div>
+            <div class="author-name">Hamza Malik</div>
+            <div class="author-location">📍 Gulberg III, Lahore</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The doorstep grooming service is exactly what busy people in Lahore need. Zero stress on
+          my cats, zero hassle for me. Booked it at midnight, had a groomer at my door by 10am. Absolutely brilliant."
+        </p>
+        <div class="review-author">
+          <div class="avatar">SF</div>
+          <div>
+            <div class="author-name">Sara Farooq</div>
+            <div class="author-location">📍 Bahria Town, Lahore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Paws & <span>Palms</span></div>
+        <p class="footer-tagline">Lahore's most trusted name in luxury pet grooming and compassionate veterinary care.
+          Every visit is a spa day your pet actually looks forward to.</p>
+        <div class="clinic-widget" style="margin-top:24px;">
+          <div class="clinic-detail"><span class="icon">📍</span><span>14-B, Commercial Area, Sector Y, DHA,
+              Lahore</span></div>
+          <div class="clinic-detail"><span class="icon">📞</span><span>+92 321 4455666</span></div>
+          <div class="clinic-detail"><span class="icon">🕐</span><span>Open Daily · 9:00 AM – 8:00 PM</span></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Full-Service Grooming</a></li>
+          <li><a href="#">Doorstep Spa Sessions</a></li>
+          <li><a href="#">Veterinary Consultations</a></li>
+          <li><a href="#">Parasite Prevention</a></li>
+          <li><a href="#">Dental Hygiene Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Book an Appointment</a></li>
+          <li><a href="#">Pricing &amp; Packages</a></li>
+          <li><a href="#">Client Reviews</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Pet Care Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Paws & Palms Luxury Pet Care. All rights reserved.</span>
+      <span>Made with 🐾 in Lahore</span>
+    </div>
+  </footer>
+
+  <!-- ── SUCCESS MODAL ── -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-card">
+      <div class="confetti-row">🎉 🐾 🎊</div>
+      <div class="checkmark-wrap">✅</div>
+      <h2 class="modal-title">You're All Set!</h2>
+      <p class="modal-sub">Your appointment has been confirmed. Our team will send a WhatsApp reminder 30 minutes before
+        your slot.</p>
+      <div class="modal-details">
+        <div class="modal-row">
+          <span class="modal-row-label">Date</span>
+          <span class="modal-row-val" id="modal-date">—</span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-row-label">Time</span>
+          <span class="modal-row-val" id="modal-time">—</span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-row-label">Session Total</span>
+          <span class="modal-row-val" id="modal-price">—</span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-row-label">Location</span>
+          <span class="modal-row-val">DHA, Lahore</span>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">Sounds Great — Back to Homepage</button>
+    </div>
+  </div>
+
+  <script>
+    // ── PRICING STATE ──
+    // Base prices keyed by pet then weight bracket
+    // Weight brackets: tiny (<1kg), small (1–3kg), medium (3–8kg), large (8–20kg), xlarge (20kg+)
+    const basePrices = {
+      dog: { tiny: 2500, small: 3500, medium: 5000, large: 7000, xlarge: 9500 },
+      cat: { tiny: 2000, small: 2800, medium: 4000, large: 5500, xlarge: 7000 },
+      rabbit: { tiny: 1800, small: 2200, medium: 3000, large: 4000, xlarge: 5000 },
+      bird: { tiny: 1200, small: 1500, medium: 2000, large: 2800, xlarge: 3500 },
+      hamster: { tiny: 1000, small: 1200, medium: 1500, large: 1800, xlarge: 2000 },
+      fish: { tiny: 800, small: 1000, medium: 1200, large: 1500, xlarge: 2000 },
+      turtle: { tiny: 1000, small: 1500, medium: 2200, large: 3000, xlarge: 4000 },
+      parrot: { tiny: 1500, small: 2000, medium: 2800, large: 3500, xlarge: 4500 },
+      guinea: { tiny: 1000, small: 1400, medium: 1800, large: 2200, xlarge: 2800 },
+      other: { tiny: 2000, small: 3000, medium: 4500, large: 6000, xlarge: 8000 }
+    };
+
+    // Map a weight key to a pricing bracket
+    const weightBracket = {
+      '500g': 'tiny', '1kg': 'tiny',
+      '1.5kg': 'small', '2kg': 'small', '2.5kg': 'small',
+      '3kg': 'small', '3.5kg': 'medium', '4kg': 'medium',
+      '4.5kg': 'medium', '5kg': 'medium', 'other': 'medium'
+    };
+
+    let state = { pet: 'dog', weight: '500g', customPetName: '', customWeightKg: null, addons: new Set() };
+
+    function fmt(n) { return 'Rs. ' + n.toLocaleString('en-PK'); }
+
+    function getWeightBracket() {
+      if (state.weight === 'other' && state.customWeightKg !== null) {
+        const kg = state.customWeightKg;
+        if (kg < 1) return 'tiny';
+        if (kg < 3) return 'small';
+        if (kg < 8) return 'medium';
+        if (kg < 20) return 'large';
+        return 'xlarge';
+      }
+      return weightBracket[state.weight] || 'medium';
+    }
+
+    function calcTotal() {
+      const bracket = getWeightBracket();
+      const prices = basePrices[state.pet] || basePrices['other'];
+      let base = prices[bracket] || prices['medium'];
+      let extra = 0;
+      state.addons.forEach(p => extra += p);
+      return { base, total: base + extra };
+    }
+
+    function refreshPrices() {
+      const { base, total } = calcTotal();
+      const bp = document.getElementById('base-price');
+      bp.textContent = fmt(base);
+      bp.classList.remove('changed');
+      void bp.offsetWidth;
+      bp.classList.add('changed');
+      const gt = document.getElementById('grand-total');
+      gt.textContent = fmt(total);
+      gt.classList.remove('pop');
+      void gt.offsetWidth;
+      gt.classList.add('pop');
+      document.getElementById('hero-total').textContent = total.toLocaleString('en-PK');
+      // breakdown
+      let parts = ['1 Grooming Session'];
+      state.addons.forEach(p => {
+        if (p === 1500) parts.push('Teeth Brushing');
+        if (p === 1000) parts.push('Oats Shampoo');
+        if (p === 2000) parts.push('Flea & Tick');
+      });
+      document.getElementById('total-breakdown').textContent = parts.join(' · ');
+    }
+
+    function selectPet(pet, btn) {
+      state.pet = pet;
+      state.customPetName = '';
+      document.querySelectorAll('#pet-seg-group .seg-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // Show/hide custom pet input
+      const row = document.getElementById('custom-pet-row');
+      if (pet === 'other') {
+        row.classList.add('visible');
+        document.getElementById('custom-pet-input').focus();
+      } else {
+        row.classList.remove('visible');
+        document.getElementById('custom-pet-input').value = '';
+      }
+      refreshPrices();
+    }
+
+    function applyCustomPet() {
+      state.customPetName = document.getElementById('custom-pet-input').value.trim();
+      // no price change for custom pet name — uses 'other' pricing
+    }
+
+    function selectWeight(weight, btn) {
+      state.weight = weight;
+      state.customWeightKg = null;
+      document.querySelectorAll('#weight-pill-group .pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // Show/hide custom weight input
+      const row = document.getElementById('custom-weight-row');
+      if (weight === 'other') {
+        row.classList.add('visible');
+        document.getElementById('custom-weight-input').focus();
+      } else {
+        row.classList.remove('visible');
+        document.getElementById('custom-weight-input').value = '';
+      }
+      refreshPrices();
+    }
+
+    function applyCustomWeight() {
+      const val = parseFloat(document.getElementById('custom-weight-input').value);
+      state.customWeightKg = isNaN(val) ? null : val;
+      refreshPrices();
+    }
+
+    // Legacy alias kept for any old onclick references (not used)
+    function selectSize(size, btn) { selectWeight(size, btn); }
+
+    function toggleAddon(card, price) {
+      card.classList.toggle('checked');
+      if (card.classList.contains('checked')) {
+        state.addons.add(price);
+      } else {
+        state.addons.delete(price);
+      }
+      refreshPrices();
+    }
+
+    // ── SCHEDULING ──
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let selectedDate = null, selectedTime = null;
+
+    function buildDates() {
+      const wrap = document.getElementById('date-scroll');
+      const today = new Date();
+      for (let i = 0; i < 10; i++) {
+        const d = new Date(today);
+        d.setDate(today.getDate() + i);
+        const pill = document.createElement('div');
+        pill.className = 'date-pill' + (i === 0 ? ' today' : '');
+        pill.innerHTML = `<span class="date-day">${days[d.getDay()]}</span><span class="date-num">${d.getDate()}</span>`;
+        const label = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]}`;
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          selectedDate = label;
+        });
+        if (i === 0) { pill.classList.add('active'); selectedDate = label; }
+        wrap.appendChild(pill);
+      }
+    }
+
+    const morningSlots = [
+      { t: '9:00 AM', quiet: true },
+      { t: '9:45 AM', quiet: true },
+      { t: '10:30 AM', quiet: false },
+      { t: '11:15 AM', quiet: false },
+    ];
+    const afternoonSlots = [
+      { t: '1:00 PM', quiet: false },
+      { t: '2:00 PM', quiet: true },
+      { t: '3:00 PM', quiet: false },
+      { t: '4:30 PM', quiet: false },
+      { t: '5:30 PM', quiet: false },
+    ];
+
+    function buildSlots(arr, containerId) {
+      const wrap = document.getElementById(containerId);
+      arr.forEach(s => {
+        const slot = document.createElement('div');
+        slot.className = 'time-slot' + (s.quiet ? ' quiet' : '');
+        slot.innerHTML = `<span>${s.t}</span>${s.quiet ? '<span class="quiet-tag">✨ Quiet hours</span>' : ''}`;
+        slot.addEventListener('click', () => {
+          document.querySelectorAll('.time-slot').forEach(sl => sl.classList.remove('active'));
+          slot.classList.add('active');
+          selectedTime = s.t;
+        });
+        wrap.appendChild(slot);
+      });
+    }
+
+    // ── MODAL ──
+    function confirmBooking() {
+      if (!selectedDate || !selectedTime) {
+        alert('Please select a date and time slot first.');
+        return;
+      }
+      const { total } = calcTotal();
+      document.getElementById('modal-date').textContent = selectedDate;
+      document.getElementById('modal-time').textContent = selectedTime;
+      document.getElementById('modal-price').textContent = fmt(total);
+      document.getElementById('modal').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+
+    // ── NAV SCROLL ──
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ── HAMBURGER ──
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+
+    // ── INIT ──
+    buildDates();
+    buildSlots(morningSlots, 'morning-slots');
+    buildSlots(afternoonSlots, 'afternoon-slots');
+    refreshPrices();
+  </script>
+</body>
+
+</html>
